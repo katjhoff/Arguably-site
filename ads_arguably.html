@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body { margin: 0; background: black; color: white; font-family: sans-serif; }
+        /* The Close Button */
+        #close-btn {
+            position: fixed; top: 10px; right: 10px; z-index: 9999;
+            background: rgba(255,255,255,0.2); color: white;
+            padding: 10px 15px; border-radius: 5px; border: 1px solid white;
+            display: none; /* Hidden for the first 5 seconds */
+        }
+    </style>
+</head>
+<body>
+    <div id="close-btn" onclick="window.location.href='close://'">X Close</div>
+    
+    <script>
+        // Show the close button after 5 seconds so they aren't stuck
+        setTimeout(() => {
+            document.getElementById('close-btn').style.display = 'block';
+        }, 5000);
+    </script>
+</body>
+</html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3940256099942544"
