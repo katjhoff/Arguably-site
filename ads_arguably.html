@@ -24,21 +24,23 @@
         /* --- NEW CLOSE BUTTON STYLES --- */
         #close-btn {
             position: fixed;
-            top: 50px;
-            left: 20px;
-            z-index: 9999; /* Ensures it sits ON TOP of the ad */
-            width: 35px;
-            height: 35px;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-            color: white;
-            border: 2px solid white;
-            border-radius: 50%; /* Makes it a perfect circle */
+            top: 40px;    /* Slightly higher */
+            right: 20px;  /* Usually ads have the 'X' on the top RIGHT */
+            z-index: 9999;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.2); /* Soft light gray tint */
+            color: rgba(255, 255, 255, 0.7);            /* Subtle white X */
+            border: none;                               /* Remove the circle border */
+            border-radius: 50%;
             text-align: center;
-            line-height: 32px; /* Vertically centers the X */
-            font-weight: bold;
-            font-family: Arial, sans-serif;
+            line-height: 30px;
+            font-size: 18px;                            /* Slightly smaller font */
+            font-weight: 300;                           /* Thinner, more elegant X */
+            font-family: -apple-system, sans-serif;     /* Use Apple's system font */
             cursor: pointer;
-            -webkit-user-select: none; /* Prevents highlighting text when tapping */
+            -webkit-user-select: none;
+            backdrop-filter: blur(5px);
         }
         #close-btn:active {
             background-color: rgba(255, 255, 255, 0.5); /* Visual feedback when tapped */
@@ -46,7 +48,7 @@
     </style>
 </head>
 <body>
-    <div id="close-btn" onclick="window.location.href='close://'">X</div>
+    <div id="close-btn" onclick="window.location='close://ad'">X</div>
 
     <div id="status-msg">Ad playing... reward in 30 seconds</div>
     
