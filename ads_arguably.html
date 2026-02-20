@@ -41,6 +41,7 @@
             cursor: pointer;
             -webkit-user-select: none;
             backdrop-filter: blur(5px);
+            display: none; /* Add this line */
         }
         #close-btn:active {
             background-color: rgba(255, 255, 255, 0.5); /* Visual feedback when tapped */
@@ -50,7 +51,7 @@
 <body>
     <div id="close-btn" onclick="window.location='close://ad'">X</div>
 
-    <div id="status-msg">Ad playing... reward in 30 seconds</div>
+    <div id="status-msg">Loading Ad...</div>
     
     <div id="ad-container">
         <div id="ad1" class="ad-slot active">
@@ -77,11 +78,27 @@
 
         const slots = ['ad1', 'ad2'];
         let current = 0;
+        
+        // This switches between ad slots every 10 seconds
         setInterval(() => {
             document.getElementById(slots[current]).classList.remove('active');
             current = (current + 1) % slots.length;
             document.getElementById(slots[current]).classList.add('active');
         }, 10000);
+
+        /* --- NEW: UI POLISH LOGIC --- */
+
+        // 1. After 2 seconds, change "Loading..." to "Ad playing..."
+        setTimeout(() => {
+            document.getElementById('status-msg').innerHTML = "Ad playing... reward in 30 seconds";
+        }, 2000);
+
+        // 2. After 5 seconds, show the sleek 'X' button and update text
+        setTimeout(() => {
+            const closeBtn = document.getElementById('close-btn');
+            closeBtn.style.display = 'block';
+            document.getElementById('status-msg').innerHTML = "Ad playing... reward in 25 seconds";
+        }, 5000);
     </script>
 </body>
 </html>
