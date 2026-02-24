@@ -18,8 +18,8 @@
         }
 
         body {
-            background-color: #ffffff; /* White Background */
-            color: #7F86EA; /* Brand Purple Text */
+            background-color: #ffffff; 
+            color: #7F86EA; 
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -30,35 +30,45 @@
 
         main {
             flex: 1;
+            /* Added flex to center the content vertically between the nav and footer */
+            display: flex;
+            align-items: center; 
         }
 
         h1 {
             font-family: 'Prompt', sans-serif;
-            color: #7F86EA; /* Brand Purple */
+            color: #7F86EA; 
             font-weight: 700;
         }
 
         .lead {
-            color: #555555; /* Slightly darker grey for readability on white */
+            color: #555555; 
         }
 
         .header-bg {
             background-color: #ffffff;
+            width: 100%; /* Ensures it spans the width */
         }
 
-        /* Styling for your iPhone screenshot */
+        /* 1. Added a smooth floating animation for the image */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
         .iphone-screenshot {
-            max-width: 320px; /* Standard portrait width */
+            max-width: 320px; 
             height: auto;
-            /* Optional: adds a soft purple glow/shadow to the phone */
             filter: drop-shadow(0 15px 30px rgba(127, 134, 234, 0.15));
+            /* Applies the animation */
+            animation: float 4s ease-in-out infinite;
         }
 
         .footer-custom {
-            background-color: #212529; /* Keeping the dark footer for professional anchor */
+            background-color: #212529; 
         }
 
-        /* Adjust badges for white background */
         .store-badge {
             height: 50px;
             transition: transform 0.2s;
@@ -69,8 +79,19 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark py-3">
+        <div class="container px-5">
+            <a class="navbar-brand text-white fs-4 fw-bolder" href="#!" style="font-family: 'Prompt', sans-serif;">
+                Arguably
+            </a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="mailto:support@arguably.com">Contact Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <header class="py-5 header-bg">
+        <header class="py-5 header-bg w-100">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
