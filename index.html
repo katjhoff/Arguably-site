@@ -16,6 +16,12 @@
             font-family: 'Prompt';
             src: url('fonts/Prompt-SemiBold.ttf') format('truetype');
         }
+        /* This strips the custom font and weight from the copyright and links */
+        .small, .link-light {
+            font-family: sans-serif !important; 
+            font-weight: normal !important;
+            color: #ffffff; /* Keeps it white against the dark background */
+        }
 
         body {
             background-color: #ffffff; 
@@ -42,7 +48,7 @@
         }
 
         .lead {
-            color: #555555; 
+            color: #000000 !important;
         }
 
         .header-bg {
@@ -98,7 +104,7 @@
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder mb-2">Think you can take on the challenge?</h1>
-                            <p class="lead fw-normal mb-4">The ultimate debate platform. Available soon on iOS and Android</p>
+                            <p class="lead fw-normal mb-4" style="color: #000000 !important;">The ultimate debate platform. Available soon on iOS and Android</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge"></a>
                                 <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="store-badge"></a>
